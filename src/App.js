@@ -1,43 +1,29 @@
 import './App.css';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  Route,
+  Routes
 } from "react-router-dom";
 
+import Navbar from './Navbar';
 import Dashboard from './pages/Dashboard';
 import HumanResources from './pages/HumanResources';
 import ProjectManagement from './pages/ProjectManagement';
 import SupplyChain from './pages/SupplyChain'; 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    // element: <MinimalLayout />,
-    errorElement: <div>Naliligaw ka yata?</div>,
-    children: [
-      {
-        index: true,
-        element: <Dashboard />
-      },
-      {
-        path: "human-resources",
-        element: <HumanResources />
-      },
-      {
-        path: "project-management",
-        element: <ProjectManagement />
-      },
-      {
-        path: "supply-chain",
-        element: <SupplyChain />
-      }
-    ]
-  },
-]);
 
 function App() {
   return (
-    <RouterProvider router={router}/>
+    <>
+      <Navbar/>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/human-resources" element={<HumanResources/>} />
+          <Route path="/project-manegament" element={<ProjectManagement/>} />
+          <Route path="/supply-chain" element={<SupplyChain/>} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

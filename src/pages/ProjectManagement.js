@@ -1,7 +1,12 @@
 import React from "react";
-import PlanningScheduling from "../components/ProjectManagement/PlanningScheduling.js";
-import ProjectBudgeting from "../components/ProjectManagement/ProjectBudgeting.js";
-import TaskManagement from "../components/ProjectManagement/TaskManagement.js";
+
+import {
+    Link,
+  } from "react-router-dom";
+
+import PlanningScheduling from "../components/ProjectManagement/PlanningScheduling";
+import ProjectBudgeting from "../components/ProjectManagement/ProjectBudgeting";
+import TaskManagement from "../components/ProjectManagement/TaskManagement";
 
 const ProjectManagement = () => {
     return (
@@ -10,7 +15,30 @@ const ProjectManagement = () => {
         <PlanningScheduling />
         <ProjectBudgeting />
         <TaskManagement />
+        {/* <div>
+          <Link to="/">
+            <button>
+              asda 
+            </button>
+          </Link>
+          <Link to="/human-resources">
+            <button>
+              asda 
+            </button>
+          </Link>
+          <Link to="/project-management">
+            <button>
+              asda 
+            </button>
+          </Link>
+          <Link to="/supply-chain">
+            <button>
+              asda 
+            </button>
+          </Link>
+        </div> */}
       </div>
+      
     );
   };
   
