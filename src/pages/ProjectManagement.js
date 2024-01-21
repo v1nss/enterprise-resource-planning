@@ -15,28 +15,6 @@ const ProjectManagement = () => {
         <PlanningScheduling />
         <ProjectBudgeting />
         <TaskManagement />
-        {/* <div>
-          <Link to="/">
-            <button>
-              asda 
-            </button>
-          </Link>
-          <Link to="/human-resources">
-            <button>
-              asda 
-            </button>
-          </Link>
-          <Link to="/project-management">
-            <button>
-              asda 
-            </button>
-          </Link>
-          <Link to="/supply-chain">
-            <button>
-              asda 
-            </button>
-          </Link>
-        </div> */}
       </div>
       
     );
