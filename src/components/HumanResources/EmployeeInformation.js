@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useContext } from 'react';
+import { EmployeeContext } from '../../pages/HumanResources';
 import { EmployeeContext } from '../../pages/HumanResources';
 
 const EmployeeInformation = () => {
@@ -28,7 +29,6 @@ const EmployeeInformation = () => {
   };
 
   const handleDelete = (name) => {
-
     const updatedEmployees = employees.filter((employee) => employee.name !== name);
     setEmployees(updatedEmployees);
   };
@@ -36,7 +36,30 @@ const EmployeeInformation = () => {
   return (
     <div>
       <h2>Employee Information</h2>
-      
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" name="name" value={employeeData.name} onChange={handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Position:
+          <input type="text" name="position" value={employeeData.position} onChange={handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Department:
+          <input type="text" name="department" value={employeeData.department} onChange={handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Salary:
+          <input type="text" name="salary" value={employeeData.salary} onChange={handleInputChange} />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+
       <div>
         <h3>Employee List:</h3>
         <ul>
