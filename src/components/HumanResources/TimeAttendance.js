@@ -21,24 +21,15 @@ const TimeAttendance = () => {
         )
       );
 
-<<<<<<< HEAD
       console.log(`Attendance Marked at ${currentTime.toLocaleTimeString()} for ${selectedEmployee}`);
     } else {
       alert('Please select an employee before marking attendance.');
-=======
-      console.log(Attendance Marked at ${currentTime.toLocaleTimeString()} for ${selectedEmployee});
-    } else {
-      console.log('Please select an employee before marking attendance.');
->>>>>>> jinan
     }
   };
 
   return (
     <div>
       <h2>Time Attendance</h2>
-<<<<<<< HEAD
-
-=======
       <label>
         Select Employee:
         <select value={selectedEmployee} onChange={handleEmployeeChange}>
@@ -52,7 +43,6 @@ const TimeAttendance = () => {
           ))}
         </select>
       </label>
->>>>>>> jinan
 
       <button onClick={markAttendance}>Mark Attendance</button>
 

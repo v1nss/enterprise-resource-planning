@@ -6,25 +6,20 @@ const PayrollProcessing = () => {
   const [payrollProcessed, setPayrollProcessed] = useState(false);
 
   const processPayroll = () => {
-    // Assuming each employee has a "salary" property
+
     const updatedEmployees = employees.map((employee) => {
       const salary = parseFloat(employee.salary || 0);
       const payroll = calculatePayroll(salary);
       return { ...employee, payroll };
     });
 
-    // Set the updated employees back to the context
-    // You may want to implement a function in the context to update employees
-    // For example, context.updateEmployees(updatedEmployees);
 
-    // Set the state to indicate that payroll has been processed
     setPayrollProcessed(true);
   };
 
   const calculatePayroll = (salary) => {
-    // Implement your payroll calculation logic here
-    // This is just a simple example, you may need to consider taxes, deductions, etc.
-    return salary * 0.9; // For example, 90% of the salary
+
+    return salary * 0.9; 
   };
 
   return (

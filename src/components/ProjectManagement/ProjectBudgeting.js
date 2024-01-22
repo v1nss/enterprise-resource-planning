@@ -14,10 +14,9 @@ const ProjectBudgeting = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform actions with the project budget data, such as saving it to a database
+
     console.log('Project Budget Data:', projectBudget);
-    // Add additional logic here based on your requirements
-    // Clear the form after submission
+
     setProjectBudget({
       projectName: '',
       estimatedCost: '',

@@ -14,10 +14,9 @@ const TaskManagement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform actions with the task data, such as saving it to a database
+
     console.log('Task Data:', taskData);
-    // Add additional logic here based on your requirements
-    // Clear the form after submission
+
     setTaskData({
       taskName: '',
       dueDate: '',

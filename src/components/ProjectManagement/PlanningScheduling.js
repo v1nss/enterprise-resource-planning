@@ -15,10 +15,9 @@ const PlanningScheduling = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform actions with the plan data, such as saving it to a database
+
     console.log('Plan Data:', plan);
-    // Add additional logic here based on your requirements
-    // Clear the form after submission
+
     setPlan({
       title: '',
       date: '',
