@@ -1,5 +1,4 @@
-import React, { useContext, useContext } from 'react';
-import { EmployeeContext } from '../../pages/HumanResources';
+import React, { useContext } from 'react';
 import { EmployeeContext } from '../../pages/HumanResources';
 
 const EmployeeInformation = () => {
