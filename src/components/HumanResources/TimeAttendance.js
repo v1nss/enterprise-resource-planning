@@ -1,30 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { EmployeeContext } from '../../pages/HumanResources';
 
 const TimeAttendance = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [attendanceStatus, setAttendanceStatus] = useState('Not Marked');
+  const { employees, setEmployees } = useContext(EmployeeContext);
+  const [selectedEmployee, setSelectedEmployee] = useState('');
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  const handleEmployeeChange = (e) => {
+    setSelectedEmployee(e.target.value);
+  };
 
   const markAttendance = () => {
-    setAttendanceStatus('Marked');
-    console.log('Attendance Marked at:', currentTime);
+    if (selectedEmployee) {
+      const currentTime = new Date();
+
+      setEmployees((prevEmployees) =>
+        prevEmployees.map((employee) =>
+          employee.name === selectedEmployee
+            ? { ...employee, attendanceTime: currentTime.toLocaleTimeString() }
+            : employee
+        )
+      );
+
+      console.log(Attendance Marked at ${currentTime.toLocaleTimeString()} for ${selectedEmployee});
+    } else {
+      console.log('Please select an employee before marking attendance.');
+    }
   };
 
   return (
     <div>
       <h2>Time Attendance</h2>
-      <p>Current Time: {currentTime.toLocaleTimeString()}</p>
-      <p>Attendance Status: {attendanceStatus}</p>
-      <button onClick={markAttendance} disabled={attendanceStatus === 'Marked'}>
-        Mark Attendance
-      </button>
+      <label>
+        Select Employee:
+        <select value={selectedEmployee} onChange={handleEmployeeChange}>
+          <option value="" disabled>
+            Select an employee
+          </option>
+          {employees.map((employee) => (
+            <option key={employee.name} value={employee.name}>
+              {employee.name}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <button onClick={markAttendance}>Mark Attendance</button>
+
+      <div>
+        <h3>Employee List with Attendance Time:</h3>
+        <ul>
+          {employees.map((employee) => (
+            <li key={employee.name}>
+              {employee.name} - Attendance Time: {employee.attendanceTime || 'Not Marked'}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
