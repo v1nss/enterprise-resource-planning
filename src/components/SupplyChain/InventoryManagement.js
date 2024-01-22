@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { FiTrash } from "react-icons/fi";
 import { FiCheck } from "react-icons/fi";
@@ -9,14 +9,8 @@ const InventoryManagement = () => {
   const [newExpense, setNewExpense] = useState("");
   const [newQuantity, setNewQuantity] = useState("");
   const [newPrice, setNewPrice] = useState("");
-  const [newTotalPrice, setNewTotalPrice] = useState("");
-  const [completedTodos, setCompletedTodos] = useState([]);
-  const [isCompletedScreen, setIsCompletedScreen] = useState(false);
+  const [, setNewTotalPrice] = useState("");
   const [, setIsEditingTodo] = useState(false);
-  const [newEditedTodoTitle, setNewEditedTodoTitle] = useState("");
-  const [newEditedDescription, setNewEditedDescription] = useState("");
-  const [editingTodoIndex, setEditingTodoIndex] = useState(null);
-
 
   const handleSum = () => {
     let updatedExpenseArr = [...allExpense];
@@ -102,7 +96,6 @@ const InventoryManagement = () => {
             type="button"
             onClick={() => {
               handleAddNewExpense();
-              
             }}
           >
             Add
@@ -131,14 +124,8 @@ const InventoryManagement = () => {
                   className="icon"
                   onClick={() => {
                     setIsEditingTodo(true);
-                    setEditingTodoIndex(index);
                   }}
                 />
-                {/* <FiCheck
-                  title="Completed?"
-                  className="check-icon"
-                  onClick={() => handleComplete(index)}
-                /> */}
               </div>
             </div>
           ))}
