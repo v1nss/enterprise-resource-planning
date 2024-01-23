@@ -7,6 +7,8 @@ const TaskManagement = () => {
     priority: 'Low', // Default priority
   });
 
+  const [tasks, setTasks] = useState([]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setTaskData({ ...taskData, [name]: value });
@@ -15,13 +17,22 @@ const TaskManagement = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Task Data:', taskData);
+    const newTask = {
+      id: new Date().getTime(), // Unique ID for each task
+      ...taskData,
+    };
+
+    setTasks([...tasks, newTask]);
 
     setTaskData({
       taskName: '',
       dueDate: '',
       priority: 'Low',
     });
+  };
+
+  const handleDelete = (taskId) => {
+    setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
   return (
@@ -59,6 +70,18 @@ const TaskManagement = () => {
         <br />
         <button type="submit">Add Task</button>
       </form>
+
+      <div>
+        <h3>Task List:</h3>
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              {task.taskName} - Due Date: {task.dueDate} - Priority: {task.priority}
+              <button onClick={() => handleDelete(task.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

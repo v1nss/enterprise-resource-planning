@@ -8,6 +8,8 @@ const PlanningScheduling = () => {
     description: '',
   });
 
+  const [schedules, setSchedules] = useState([]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPlan({ ...plan, [name]: value });
@@ -16,7 +18,12 @@ const PlanningScheduling = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Plan Data:', plan);
+    const newSchedule = {
+      id: new Date().getTime(), // Unique ID for each schedule
+      ...plan,
+    };
+
+    setSchedules([...schedules, newSchedule]);
 
     setPlan({
       title: '',
@@ -24,6 +31,10 @@ const PlanningScheduling = () => {
       time: '',
       description: '',
     });
+  };
+
+  const handleDelete = (scheduleId) => {
+    setSchedules(schedules.filter((schedule) => schedule.id !== scheduleId));
   };
 
   return (
@@ -52,6 +63,18 @@ const PlanningScheduling = () => {
         <br />
         <button type="submit">Submit Plan</button>
       </form>
+
+      <div>
+        <h3>Schedule List:</h3>
+        <ul>
+          {schedules.map((schedule) => (
+            <li key={schedule.id}>
+              {schedule.title} - Date: {schedule.date}, Time: {schedule.time}
+              <button onClick={() => handleDelete(schedule.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

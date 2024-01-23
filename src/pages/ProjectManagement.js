@@ -35,9 +35,9 @@ const ProjectManagement = () => {
     return (
       <div>
       <div>
-        <button onClick={handlePlanningSchedulingClick}>Employee Information</button>
-        <button onClick={handleProjectBudgetingClick}>Time Attendance</button>
-        <button onClick={handleTaskManagementClick}>Payroll Processing</button>
+        <button onClick={handlePlanningSchedulingClick}>Planning Scheduling</button>
+        <button onClick={handleProjectBudgetingClick}>Project Budgeting</button>
+        <button onClick={handleTaskManagementClick}>Task Management</button>
       </div>
 
       {showPlanningScheduling && <PlanningScheduling />}

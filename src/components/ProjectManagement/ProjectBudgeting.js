@@ -7,6 +7,8 @@ const ProjectBudgeting = () => {
     description: '',
   });
 
+  const [projects, setProjects] = useState([]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProjectBudget({ ...projectBudget, [name]: value });
@@ -15,13 +17,22 @@ const ProjectBudgeting = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Project Budget Data:', projectBudget);
+    const newProject = {
+      id: new Date().getTime(), // Unique ID for each project
+      ...projectBudget,
+    };
+
+    setProjects([...projects, newProject]);
 
     setProjectBudget({
       projectName: '',
       estimatedCost: '',
       description: '',
     });
+  };
+
+  const handleDelete = (projectId) => {
+    setProjects(projects.filter((project) => project.id !== projectId));
   };
 
   return (
@@ -59,6 +70,18 @@ const ProjectBudgeting = () => {
         <br />
         <button type="submit">Submit Project Budget</button>
       </form>
+
+      <div>
+        <h3>Project List:</h3>
+        <ul>
+          {projects.map((project) => (
+            <li key={project.id}>
+              {project.projectName} - Estimated Cost: {project.estimatedCost}
+              <button onClick={() => handleDelete(project.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
