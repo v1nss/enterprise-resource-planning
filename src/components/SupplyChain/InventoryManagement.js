@@ -61,8 +61,9 @@ const InventoryManagement = () => {
   }
 
   return (
-    <div>
+    <div className="Supply">
       <div className="inventory-input">
+        <h2>Supply Chain Management</h2>
         <div className="inventory-input-item">
           <label>Title:</label>
           <input
@@ -104,10 +105,12 @@ const InventoryManagement = () => {
             Sum
           </button>
         </div>
+      </div>
+
         <div className="inventory-list-container">
           {allExpense.map((item, index) => (
             <div>
-              <div>
+              <div className="inventory-list">
                 <h3>product: {item.title}</h3>
                 <p>price: {item.price}</p>
                 <p>quantity: {item.quantity}</p>
@@ -119,18 +122,10 @@ const InventoryManagement = () => {
                   className="icon-delete"
                   onClick={() => handleInventoryDelete(index)}
                 />
-                <FiEdit2
-                  title="Edit?"
-                  className="icon"
-                  onClick={() => {
-                    setIsEditingTodo(true);
-                  }}
-                />
               </div>
             </div>
           ))}
         </div>
-      </div>
     </div>
   );
 };

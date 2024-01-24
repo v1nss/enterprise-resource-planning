@@ -127,14 +127,15 @@ ul{
 .EmployeeInfo,
 .planSched,
 .projectBudget,
-.taskManage{
+.taskManage,
+.inventory-input{
   text-align: center;
   position: relative;
   width: 20%;
   padding: 20px 30px;
   background-color: #eeeeee;
   border-radius: 20px 0 0 20px;
-  box-shadow: 5px 5px 5px #15171b5e ;
+  box-shadow: 5px 5px 5px #15171b5e;
 }
 
 h2{
@@ -146,7 +147,8 @@ h2{
 .EmployeeInfo label,
 .planSched label,
 .projectBudget label,
-.taskManage label{
+.taskManage label,
+.inventory-input label{
   text-align: left;
   font-size: 1rem;
   display: flex;
@@ -160,7 +162,8 @@ h2{
 .planSched textarea,
 .projectBudget input,
 .projectBudget textarea,
-.taskManage input{
+.taskManage input,
+.inventory-input input{
   padding: 5px;
   height: 20px;
   font-size: 1rem;
@@ -176,7 +179,8 @@ h2{
 .planSched textarea:focus,
 .projectBudget input:focus,
 .projectBudget textarea:focus,
-.taskManage input:focus{
+.taskManage input:focus,
+.inventory-input input:focus{
   font-size: 1rem;
   background-color: transparent;
   outline: none;
@@ -185,13 +189,15 @@ h2{
 .EmployeeInfo button,
 .planSched button,
 .projectBudget button,
-.taskManage button{
+.taskManage button,
+.inventory-input button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   background-color: #1A5BE6;
   color: #ffffff;
   width: fit-content;
   padding: 8px 24px;
+  margin: 10px;
   border: none;
   border-radius: 30px;
 }
@@ -199,14 +205,16 @@ h2{
 .EmployeeInfo button:hover,
 .planSched button:hover,
 .projectBudget button:hover,
-.taskManage button:hover{
+.taskManage button:hover,
+.inventory-input button:hover{
   background-color: #375EB3;
 }
 
 .EmployeeList,
 .SchedList,
 .projList,
-.taskList{
+.taskList,
+.inventory-list-container{
   background-color: #292929;
   width: 20%;
   padding: 20px 30px;
@@ -216,7 +224,8 @@ h2{
 .EmployeeList h3,
 .SchedList h3,
 .projList h3,
-.taskList h3{
+.taskList h3,
+.inventory-list-container h3{
   font-family: "Scene", sans-serif;
   font-size: 1.2rem;
   color: white;
@@ -226,7 +235,8 @@ h2{
 .EmployeeList li a,
 .SchedList li a,
 .projList li a,
-.taskList li a{
+.taskList li a,
+.inventory-list-container li a{
   text-align: justify;
   text-decoration: none;
   margin: 30px;
@@ -235,8 +245,9 @@ h2{
 
 .EmployeeList li,
 .SchedList li,
-.projList li
-.taskList li{
+.projList li,
+.taskList li,
+.inventory-list-container li{
   width: 100%;
   margin: 20px 0;
 }
@@ -388,4 +399,28 @@ h2{
 .ProjManage button:hover{
   background-color: #1A5BE6;
   transition: 0.5s;
+}
+
+/* Supply Chain Management */
+
+.Supply{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.inventory-list-buttons{
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.inventory-list-buttons .icon-delete:hover{
+  color: #e61a1a;
+}
+
+.inventory-list{
+  color: white;
+  text-align: center;
 }
