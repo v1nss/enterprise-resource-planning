@@ -51,6 +51,7 @@
 .nav ul{
   list-style-type: none;
   padding: 0;
+  margin: 0;
   width: 200px;
 }
 
@@ -72,12 +73,27 @@
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: white;
+  border-bottom: 2px solid #15171b;
 }
 
-.dashboard:hover{
-  background-color: transparent;
+.nav .dashboard:hover{
   color: #1A5BE6;
+  background-color: #282c34;
+
+}
+
+.humanResources{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 200px;
+  top: 0;
+}
+
+.humanResources button{
+  padding: 16px 24px;
 }
 
 .EmployeeInfo{
