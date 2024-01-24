@@ -23,7 +23,7 @@ const PayrollProcessing = () => {
   };
 
   return (
-    <div>
+    <div className='payroll'>
       <h2>Payroll Processing</h2>
       <button onClick={processPayroll} disabled={payrollProcessed}>
         Process Payroll
@@ -34,7 +34,7 @@ const PayrollProcessing = () => {
           <ul>
             {employees.map((employee) => (
               <li key={employee.name}>
-                {employee.name}: Original Salary - {employee.salary}, Computed Payroll - {employee.payroll}
+                <a>{employee.name}: Original Salary - {employee.salary}, Computed Payroll - {employee.payroll}</a>
               </li>
             ))}
           </ul>

@@ -28,7 +28,7 @@ const TimeAttendance = () => {
   };
 
   return (
-    <div>
+    <div className='timeAttend'>
       <h2>Time Attendance</h2>
       <label>
         Select Employee:

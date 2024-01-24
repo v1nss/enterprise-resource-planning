@@ -21,6 +21,12 @@
   }
 }
 
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .App-header {
   background-color: #282c34;
   display: flex;
@@ -49,7 +55,6 @@
 }
 
 .nav ul{
-  list-style-type: none;
   padding: 0;
   margin: 0;
   width: 200px;
@@ -63,7 +68,8 @@
   background-color: #282c34;
 }
 
-.nav a:hover{
+.nav a:hover,
+.active{
   background-color: #1A5BE6;
   transition: 0.3s;
 }
@@ -89,29 +95,41 @@
   justify-content: center;
   position: absolute;
   left: 200px;
-  top: 0;
+  top: 7vh;
 }
 
 .humanResources button{
   padding: 16px 24px;
+  background-color: #404652;
+  color: white;
+  border: none;
 }
 
-.EmployeeInfo{
+.humanResources button:hover{
+  background-color: #1A5BE6;
+  transition: 0.5s;
+}
+
+.Employee{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-self: center;
   margin: 0 auto;
+}
+
+.EmployeeInfo{
   text-align: center;
   position: relative;
   width: 20%;
   padding: 20px 30px;
   background-color: #eeeeee;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 5px 5px 5px #15171b5e ;
 }
 
-.EmployeeInfo h2{
+h2{
   font-family: "Scene", sans-serif;
+  font-size: 1.5rem;
   color: #1A5BE6;
 }
 
@@ -157,11 +175,141 @@
 }
 
 .EmployeeList{
-  margin-top: 20px;
-  background-color: #ffffff;
+  background-color: #292929;
+  width: 20%;
+  padding: 20px 30px;
+  border-radius: 0 20px 20px 0;
+}
+
+.EmployeeList h3{
+  font-family: "Scene", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+.EmployeeList li a{
+  text-align: justify;
+  text-decoration: none;
+  margin: 30px;
+  color: white;
 }
 
 .EmployeeList li{
-  text-decoration: none;
+  width: 100%;
+  margin: 10px;
+}
+
+.EmployeeList button{
+  font-family: "Scene", sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  width: fit-content;
+  background-color: transparent;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 30px;
+  align-self: flex-end;
+}
+
+.EmployeeList button:hover{
+  background-color: #e61a1a;
+}
+
+.timeAttend{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  width: 20%;
+  padding: 20px 30px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #15171b5e ;
+}
+
+.timeAttend label{
+  text-align: left;
+  width: 90%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.timeAttend button{
+  font-family: "Scene", sans-serif;
+  font-size: 15px;
+  background-color: #1A5BE6;
+  color: #ffffff;
+  width: fit-content;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 30px;
   margin: 20px;
+}
+
+.timeAttend button:hover{
+  background-color: #375EB3;
+}
+
+.timeAttend select{
+  padding: 5px;
+  font-size: 1rem;
+  color: black;
+  font-family: "Scene", sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+
+.timeAttend select:focus{
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+}
+
+.payroll{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  width: 30%;
+  padding: 20px 30px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #15171b5e ;
+}
+
+.payroll button{
+  font-family: "Scene", sans-serif;
+  font-size: 15px;
+  background-color: #1A5BE6;
+  color: #ffffff;
+  width: fit-content;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.payroll button:hover{
+  background-color: #375EB3;
+}
+
+.payroll p{
+  font-size: 16px;
+}
+
+.payroll li{
+  margin: 10px;
+  font-family: "Scene", sans-serif;
+  font-weight: 500;
 }

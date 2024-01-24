@@ -33,40 +33,42 @@ const EmployeeInformation = () => {
   };
 
   return (
-    <div className='EmployeeInfo'>
-      <h2>Employee Information</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input type="text" name="name" value={employeeData.name} onChange={handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Position
-          <input type="text" name="position" value={employeeData.position} onChange={handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Department
-          <input type="text" name="department" value={employeeData.department} onChange={handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Salary
-          <input type="text" name="salary" value={employeeData.salary} onChange={handleInputChange} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <div className='Employee'>
+      <div className='EmployeeInfo'>
+        <h2>Employee Information</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Name
+            <input type="text" name="name" value={employeeData.name} onChange={handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Position
+            <input type="text" name="position" value={employeeData.position} onChange={handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Department
+            <input type="text" name="department" value={employeeData.department} onChange={handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Salary
+            <input type="text" name="salary" value={employeeData.salary} onChange={handleInputChange} />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
 
       <div className='EmployeeList'>
-        <h3>Employee List:</h3>
+        <h3>Employee List</h3>
         <ul>
           {employees.map((employee, index) => (
-            <li key={index}>
-              {employee.name} -{' '}
-              <button onClick={() => handleDelete(employee.name)}>Delete</button>
-            </li>
+            <li key={index}><a>
+            {employee.name} -{' '}</a>
+            <button onClick={() => handleDelete(employee.name)}>Delete</button>
+          </li>
           ))}
         </ul>
       </div>
