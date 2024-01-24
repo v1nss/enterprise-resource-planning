@@ -36,47 +36,49 @@ const ProjectBudgeting = () => {
   };
 
   return (
-    <div>
-      <h2>Project Budgeting</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Project Name:
-          <input
-            type="text"
-            name="projectName"
-            value={projectBudget.projectName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Estimated Cost:
-          <input
-            type="text"
-            name="estimatedCost"
-            value={projectBudget.estimatedCost}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Description:
-          <textarea
-            name="description"
-            value={projectBudget.description}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Submit Project Budget</button>
-      </form>
+    <div className='project'>
+      <div className='projectBudget'>
+        <h2>Project Budgeting</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Project Name:
+            <input
+              type="text"
+              name="projectName"
+              value={projectBudget.projectName}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <label>
+            Estimated Cost:
+            <input
+              type="text"
+              name="estimatedCost"
+              value={projectBudget.estimatedCost}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <label>
+            Description:
+            <textarea
+              name="description"
+              value={projectBudget.description}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Submit Project Budget</button>
+        </form>
+      </div>
 
-      <div>
+      <div className='projList'>
         <h3>Project List:</h3>
         <ul>
           {projects.map((project) => (
             <li key={project.id}>
-              {project.projectName} - Estimated Cost: {project.estimatedCost}
+              <a>{project.projectName} - Estimated Cost: {project.estimatedCost}</a>
               <button onClick={() => handleDelete(project.id)}>Delete</button>
             </li>
           ))}

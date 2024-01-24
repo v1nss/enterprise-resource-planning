@@ -115,7 +115,8 @@ ul{
 /* Human Resources: EMPLOYEE LIST && Project Management: PLANNING SCHEDULE */
 
 .Employee, 
-.planning{
+.planning,
+.project{
   display: flex;
   justify-content: center;
   align-self: center;
@@ -123,7 +124,8 @@ ul{
 }
 
 .EmployeeInfo,
-.planSched{
+.planSched,
+.projectBudget{
   text-align: center;
   position: relative;
   width: 20%;
@@ -140,7 +142,8 @@ h2{
 }
 
 .EmployeeInfo label,
-.planSched label{
+.planSched label,
+.projectBudget label{
   text-align: left;
   font-size: 1rem;
   display: flex;
@@ -151,7 +154,9 @@ h2{
 
 .EmployeeInfo input,
 .planSched input,
-.planSched textarea{
+.planSched textarea,
+.projectBudget input,
+.projectBudget textarea{
   padding: 5px;
   height: 20px;
   font-size: 1rem;
@@ -164,14 +169,17 @@ h2{
 
 .EmployeeInfo input:focus,
 .planSched input:focus,
-.planSched textarea:focus{
+.planSched textarea:focus,
+.projectBudget input:focus,
+.projectBudget textarea:focus{
   font-size: 1rem;
   background-color: transparent;
   outline: none;
 }
 
 .EmployeeInfo button,
-.planSched button{
+.planSched button,
+.projectBudget button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   background-color: #1A5BE6;
@@ -183,12 +191,14 @@ h2{
 }
 
 .EmployeeInfo button:hover,
-.planSched button:hover{
+.planSched button:hover,
+.projectBudget button:hover{
   background-color: #375EB3;
 }
 
 .EmployeeList,
-.SchedList{
+.SchedList,
+.projList{
   background-color: #292929;
   width: 20%;
   padding: 20px 30px;
@@ -196,7 +206,8 @@ h2{
 }
 
 .EmployeeList h3,
-.SchedList h3{
+.SchedList h3,
+.projList h3{
   font-family: "Scene", sans-serif;
   font-size: 1.2rem;
   color: white;
@@ -204,7 +215,8 @@ h2{
 }
 
 .EmployeeList li a,
-.SchedList li a{
+.SchedList li a,
+.projList li a{
   text-align: justify;
   text-decoration: none;
   margin: 30px;
@@ -212,13 +224,15 @@ h2{
 }
 
 .EmployeeList li,
-.SchedList li{
+.SchedList li,
+.projList li{
   width: 100%;
   margin: 20px 0;
 }
 
 .EmployeeList button,
-.SchedList button{
+.SchedList button,
+.projlist button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   color: #ffffff;
@@ -231,7 +245,8 @@ h2{
 }
 
 .EmployeeList button:hover,
-.SchedList button:hover{
+.SchedList button:hover,
+.projList button:hover{
   background-color: #e61a1a;
 }
 
