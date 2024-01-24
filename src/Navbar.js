@@ -3,10 +3,10 @@ import { Link, resolvePath, useMatch, useResolvedPath, Route} from "react-router
 export default function Navbar() {
     return(
         <nav className="nav">
-            <Link to="/" className="dashboard"> 
-                dashboard
-            </Link>
             <ul>
+                <a><CustomLink to="/" className="dashboard"> 
+                dashboard
+            </CustomLink></a>
                 <a><CustomLink to="/human-resources">Human Resources</CustomLink></a>
                 <a><CustomLink to="/project-manegament">Project Management</CustomLink></a>
                 <a><CustomLink to="/supply-chain">Supply Chain</CustomLink></a>

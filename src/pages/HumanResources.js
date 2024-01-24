@@ -46,7 +46,7 @@ const HumanResources = () => {
   return (
     <EmployeeProvider>
       <div>
-      <div>
+      <div className='humanResources'>
         <button onClick={handleEmployeeInformationClick}>Employee Information</button>
         <button onClick={handleTimeAttendanceClick}>Time Attendance</button>
         <button onClick={handlePayrollProcessClick}>Payroll Processing</button>
