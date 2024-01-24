@@ -7,9 +7,9 @@ export default function Navbar() {
                 dashboard
             </Link>
             <ul>
-                <CustomLink to="/human-resources">Human Resources</CustomLink>
-                <CustomLink to="/project-manegament">Project Management</CustomLink>
-                <CustomLink to="/supply-chain">Supply Chain</CustomLink>
+                <a><CustomLink to="/human-resources">Human Resources</CustomLink></a>
+                <a><CustomLink to="/project-manegament">Project Management</CustomLink></a>
+                <a><CustomLink to="/supply-chain">Supply Chain</CustomLink></a>
             </ul>
         </nav>
     )
