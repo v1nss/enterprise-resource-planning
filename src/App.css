@@ -10,6 +10,10 @@
   min-height: 100vh;
 }
 
+html{
+  background-color: #bdbdbd;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
