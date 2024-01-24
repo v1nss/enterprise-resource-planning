@@ -34,7 +34,7 @@ const ProjectManagement = () => {
 
     return (
       <div>
-      <div>
+      <div className="ProjManage">
         <button onClick={handlePlanningSchedulingClick}>Planning Scheduling</button>
         <button onClick={handleProjectBudgetingClick}>Project Budgeting</button>
         <button onClick={handleTaskManagementClick}>Task Management</button>

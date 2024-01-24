@@ -89,6 +89,8 @@ ul{
 
 }
 
+/* Human Resources */
+
 .humanResources{
   display: flex;
   flex-direction: column;
@@ -110,14 +112,18 @@ ul{
   transition: 0.5s;
 }
 
-.Employee{
+/* Human Resources: EMPLOYEE LIST && Project Management: PLANNING SCHEDULE */
+
+.Employee, 
+.planning{
   display: flex;
   justify-content: center;
   align-self: center;
   margin: 0 auto;
 }
 
-.EmployeeInfo{
+.EmployeeInfo,
+.planSched{
   text-align: center;
   position: relative;
   width: 20%;
@@ -133,7 +139,8 @@ h2{
   color: #1A5BE6;
 }
 
-.EmployeeInfo label{
+.EmployeeInfo label,
+.planSched label{
   text-align: left;
   font-size: 1rem;
   display: flex;
@@ -142,7 +149,9 @@ h2{
   text-transform: uppercase;
 }
 
-.EmployeeInfo input{
+.EmployeeInfo input,
+.planSched input,
+.planSched textarea{
   padding: 5px;
   height: 20px;
   font-size: 1rem;
@@ -153,13 +162,16 @@ h2{
   border-bottom: 2px solid gray;
 }
 
-.EmployeeInfo input:focus{
+.EmployeeInfo input:focus,
+.planSched input:focus,
+.planSched textarea:focus{
   font-size: 1rem;
   background-color: transparent;
   outline: none;
 }
 
-.EmployeeInfo button{
+.EmployeeInfo button,
+.planSched button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   background-color: #1A5BE6;
@@ -170,37 +182,43 @@ h2{
   border-radius: 30px;
 }
 
-.EmployeeInfo button:hover{
+.EmployeeInfo button:hover,
+.planSched button:hover{
   background-color: #375EB3;
 }
 
-.EmployeeList{
+.EmployeeList,
+.SchedList{
   background-color: #292929;
   width: 20%;
   padding: 20px 30px;
   border-radius: 0 20px 20px 0;
 }
 
-.EmployeeList h3{
+.EmployeeList h3,
+.SchedList h3{
   font-family: "Scene", sans-serif;
   font-size: 1.2rem;
   color: white;
   text-align: center;
 }
 
-.EmployeeList li a{
+.EmployeeList li a,
+.SchedList li a{
   text-align: justify;
   text-decoration: none;
   margin: 30px;
   color: white;
 }
 
-.EmployeeList li{
+.EmployeeList li,
+.SchedList li{
   width: 100%;
-  margin: 10px;
+  margin: 20px 0;
 }
 
-.EmployeeList button{
+.EmployeeList button,
+.SchedList button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   color: #ffffff;
@@ -212,9 +230,12 @@ h2{
   align-self: flex-end;
 }
 
-.EmployeeList button:hover{
+.EmployeeList button:hover,
+.SchedList button:hover{
   background-color: #e61a1a;
 }
+
+/* Human Resources: TIME ATTENDANCE */
 
 .timeAttend{
   display: flex;
@@ -273,6 +294,8 @@ h2{
   outline: none;
 }
 
+/* Human Resources: PAYROLL */
+
 .payroll{
   display: flex;
   flex-direction: column;
@@ -312,4 +335,27 @@ h2{
   margin: 10px;
   font-family: "Scene", sans-serif;
   font-weight: 500;
+}
+
+/* Project Management */
+
+.ProjManage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 200px;
+  top: 12vh;
+}
+
+.ProjManage button{
+  padding: 16px 24px;
+  background-color: #404652;
+  color: white;
+  border: none;
+}
+
+.ProjManage button:hover{
+  background-color: #1A5BE6;
+  transition: 0.5s;
 }
