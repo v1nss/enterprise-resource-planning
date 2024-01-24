@@ -36,47 +36,49 @@ const TaskManagement = () => {
   };
 
   return (
-    <div>
-      <h2>Task Management</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Task Name:
-          <input
-            type="text"
-            name="taskName"
-            value={taskData.taskName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Due Date:
-          <input
-            type="date"
-            name="dueDate"
-            value={taskData.dueDate}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Priority:
-          <select name="priority" value={taskData.priority} onChange={handleInputChange}>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </label>
-        <br />
-        <button type="submit">Add Task</button>
-      </form>
+    <div className='taskM'>
+      <div className='taskManage'>
+        <h2>Task Management</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Task Name:
+            <input
+              type="text"
+              name="taskName"
+              value={taskData.taskName}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <label>
+            Due Date:
+            <input
+              type="date"
+              name="dueDate"
+              value={taskData.dueDate}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <label>
+            Priority:
+            <select name="priority" value={taskData.priority} onChange={handleInputChange}>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <br />
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
 
-      <div>
+      <div className='taskList'>
         <h3>Task List:</h3>
         <ul>
           {tasks.map((task) => (
             <li key={task.id}>
-              {task.taskName} - Due Date: {task.dueDate} - Priority: {task.priority}
+              <a>{task.taskName} - Due Date: {task.dueDate} - Priority: {task.priority}</a>
               <button onClick={() => handleDelete(task.id)}>Delete</button>
             </li>
           ))}

@@ -116,7 +116,8 @@ ul{
 
 .Employee, 
 .planning,
-.project{
+.project,
+.taskM{
   display: flex;
   justify-content: center;
   align-self: center;
@@ -125,7 +126,8 @@ ul{
 
 .EmployeeInfo,
 .planSched,
-.projectBudget{
+.projectBudget,
+.taskManage{
   text-align: center;
   position: relative;
   width: 20%;
@@ -143,7 +145,8 @@ h2{
 
 .EmployeeInfo label,
 .planSched label,
-.projectBudget label{
+.projectBudget label,
+.taskManage label{
   text-align: left;
   font-size: 1rem;
   display: flex;
@@ -156,7 +159,8 @@ h2{
 .planSched input,
 .planSched textarea,
 .projectBudget input,
-.projectBudget textarea{
+.projectBudget textarea,
+.taskManage input{
   padding: 5px;
   height: 20px;
   font-size: 1rem;
@@ -171,7 +175,8 @@ h2{
 .planSched input:focus,
 .planSched textarea:focus,
 .projectBudget input:focus,
-.projectBudget textarea:focus{
+.projectBudget textarea:focus,
+.taskManage input:focus{
   font-size: 1rem;
   background-color: transparent;
   outline: none;
@@ -179,7 +184,8 @@ h2{
 
 .EmployeeInfo button,
 .planSched button,
-.projectBudget button{
+.projectBudget button,
+.taskManage button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   background-color: #1A5BE6;
@@ -192,13 +198,15 @@ h2{
 
 .EmployeeInfo button:hover,
 .planSched button:hover,
-.projectBudget button:hover{
+.projectBudget button:hover,
+.taskManage button:hover{
   background-color: #375EB3;
 }
 
 .EmployeeList,
 .SchedList,
-.projList{
+.projList,
+.taskList{
   background-color: #292929;
   width: 20%;
   padding: 20px 30px;
@@ -207,7 +215,8 @@ h2{
 
 .EmployeeList h3,
 .SchedList h3,
-.projList h3{
+.projList h3,
+.taskList h3{
   font-family: "Scene", sans-serif;
   font-size: 1.2rem;
   color: white;
@@ -216,7 +225,8 @@ h2{
 
 .EmployeeList li a,
 .SchedList li a,
-.projList li a{
+.projList li a,
+.taskList li a{
   text-align: justify;
   text-decoration: none;
   margin: 30px;
@@ -225,14 +235,16 @@ h2{
 
 .EmployeeList li,
 .SchedList li,
-.projList li{
+.projList li
+.taskList li{
   width: 100%;
   margin: 20px 0;
 }
 
 .EmployeeList button,
 .SchedList button,
-.projlist button{
+.projlist button,
+.taskList button{
   font-family: "Scene", sans-serif;
   font-size: 15px;
   color: #ffffff;
@@ -246,7 +258,8 @@ h2{
 
 .EmployeeList button:hover,
 .SchedList button:hover,
-.projList button:hover{
+.projList button:hover,
+.taskList button:hover{
   background-color: #e61a1a;
 }
 
@@ -293,7 +306,8 @@ h2{
   background-color: #375EB3;
 }
 
-.timeAttend select{
+.timeAttend select,
+.taskManage select{
   padding: 5px;
   font-size: 1rem;
   color: black;
@@ -303,7 +317,8 @@ h2{
   border-bottom: 2px solid gray;
 }
 
-.timeAttend select:focus{
+.timeAttend select:focus,
+.taskManage select:focus{
   font-size: 1rem;
   background-color: transparent;
   outline: none;
