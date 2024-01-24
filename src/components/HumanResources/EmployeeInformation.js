@@ -33,33 +33,33 @@ const EmployeeInformation = () => {
   };
 
   return (
-    <div>
+    <div className='EmployeeInfo'>
       <h2>Employee Information</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          Name
           <input type="text" name="name" value={employeeData.name} onChange={handleInputChange} />
         </label>
         <br />
         <label>
-          Position:
+          Position
           <input type="text" name="position" value={employeeData.position} onChange={handleInputChange} />
         </label>
         <br />
         <label>
-          Department:
+          Department
           <input type="text" name="department" value={employeeData.department} onChange={handleInputChange} />
         </label>
         <br />
         <label>
-          Salary:
+          Salary
           <input type="text" name="salary" value={employeeData.salary} onChange={handleInputChange} />
         </label>
         <br />
         <button type="submit">Submit</button>
       </form>
 
-      <div>
+      <div className='EmployeeList'>
         <h3>Employee List:</h3>
         <ul>
           {employees.map((employee, index) => (
