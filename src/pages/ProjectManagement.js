@@ -1,15 +1,46 @@
-import React, { useState } from "react";
-
-import {
-    Link,
-  } from "react-router-dom";
-
+import React, { useEffect, useState, createContext, useContext } from 'react';
 import PlanningScheduling from "../components/ProjectManagement/PlanningScheduling";
 import ProjectBudgeting from "../components/ProjectManagement/ProjectBudgeting";
 import TaskManagement from "../components/ProjectManagement/TaskManagement";
 
-const ProjectManagement = () => {
+const ProjectManagementContext = createContext();
 
+const ProjectManagementProvider = ({ children }) => {
+  const [projectsData, setProjectsData] = useState({
+    schedules: [],
+    projects: [],
+    tasks: [],
+  });
+
+  useEffect(() => {
+    // Load data from local storage when the component mounts
+    const storedData = localStorage.getItem('projectsData');
+    if (storedData) {
+      setProjectsData(JSON.parse(storedData));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save data to local storage whenever projectsData changes
+    localStorage.setItem('projectsData', JSON.stringify(projectsData));
+  }, [projectsData]);
+
+  return (
+    <ProjectManagementContext.Provider value={{ projectsData, setProjectsData }}>
+      {children}
+    </ProjectManagementContext.Provider>
+  );
+};
+
+const useProjectManagement = () => {
+  const context = useContext(ProjectManagementContext);
+  if (!context) {
+    throw new Error('useProjectManagement must be used within a ProjectManagementProvider');
+  }
+  return context;
+};
+
+const ProjectManagement = () => {
   const [showPlanningScheduling, setShowPlanningScheduling] = useState(false);
   const [showProjectBudgeting, setShowProjectBudgeting] = useState(false);
   const [showTaskManagement, setShowTaskManagement] = useState(false);
@@ -32,20 +63,22 @@ const ProjectManagement = () => {
     setShowTaskManagement(true);
   };
 
-    return (
+  return (
+    <ProjectManagementProvider>
       <div>
-      <div className="ProjManage">
-        <button onClick={handlePlanningSchedulingClick}>Planning Scheduling</button>
-        <button onClick={handleProjectBudgetingClick}>Project Budgeting</button>
-        <button onClick={handleTaskManagementClick}>Task Management</button>
-      </div>
+        <div className="ProjManage">
+          <button onClick={handlePlanningSchedulingClick}>Planning Scheduling</button>
+          <button onClick={handleProjectBudgetingClick}>Project Budgeting</button>
+          <button onClick={handleTaskManagementClick}>Task Management</button>
+        </div>
 
-      {showPlanningScheduling && <PlanningScheduling />}
-      {showProjectBudgeting && <ProjectBudgeting />}
-      {showTaskManagement && <TaskManagement />}
+        {showPlanningScheduling && <PlanningScheduling />}
+        {showProjectBudgeting && <ProjectBudgeting />}
+        {showTaskManagement && <TaskManagement />}
       </div>
-      
-    );
-  };
-  
-  export default ProjectManagement;
+    </ProjectManagementProvider>
+  );
+};
+
+export default ProjectManagement;
+export { ProjectManagementProvider, useProjectManagement };

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { EmployeeContext } from '../../pages/HumanResources';
 
 const PayrollProcessing = () => {
@@ -21,6 +21,11 @@ const PayrollProcessing = () => {
 
     return salary * 0.9; 
   };
+
+  useEffect(() => {
+    // Update local storage whenever employees change
+    localStorage.setItem('employees', JSON.stringify(employees));
+  }, [employees]);
 
   return (
     <div className='payroll'>

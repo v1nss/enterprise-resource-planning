@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useProjectManagement } from '../../pages/ProjectManagement';
 
 const PlanningScheduling = () => {
+  const { projectsData, setProjectsData } = useProjectManagement();
+  const { schedules } = projectsData;
+
   const [plan, setPlan] = useState({
     title: '',
     date: '',
@@ -8,7 +12,21 @@ const PlanningScheduling = () => {
     description: '',
   });
 
-  const [schedules, setSchedules] = useState([]);
+  useEffect(() => {
+
+    const storedSchedules = localStorage.getItem('schedules');
+    if (storedSchedules) {
+      setProjectsData((prevData) => ({
+        ...prevData,
+        schedules: JSON.parse(storedSchedules),
+      }));
+    }
+  }, [setProjectsData]);
+
+  useEffect(() => {
+    localStorage.setItem('schedules', JSON.stringify(schedules));
+    console.log(schedules);
+  }, [schedules]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,11 +37,14 @@ const PlanningScheduling = () => {
     e.preventDefault();
 
     const newSchedule = {
-      id: new Date().getTime(), // Unique ID for each schedule
+      id: new Date().getTime(),
       ...plan,
     };
 
-    setSchedules([...schedules, newSchedule]);
+    setProjectsData((prevData) => ({
+      ...prevData,
+      schedules: [...prevData.schedules, newSchedule],
+    }));
 
     setPlan({
       title: '',
@@ -34,7 +55,10 @@ const PlanningScheduling = () => {
   };
 
   const handleDelete = (scheduleId) => {
-    setSchedules(schedules.filter((schedule) => schedule.id !== scheduleId));
+    setProjectsData((prevData) => ({
+      ...prevData,
+      schedules: prevData.schedules.filter((schedule) => schedule.id !== scheduleId),
+    }));
   };
 
   return (

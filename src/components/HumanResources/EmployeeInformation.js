@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { EmployeeContext } from '../../pages/HumanResources';
 
 const EmployeeInformation = () => {
@@ -9,6 +9,14 @@ const EmployeeInformation = () => {
     department: '',
     salary: '',
   });
+
+  useEffect(() => {
+    // Save data to local storage when the component mounts
+    const storedEmployees = localStorage.getItem('employees');
+    if (storedEmployees) {
+      setEmployees(JSON.parse(storedEmployees));
+    }
+  }, [setEmployees]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

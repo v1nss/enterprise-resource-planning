@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 import { FiTrash } from "react-icons/fi";
-import { FiCheck } from "react-icons/fi";
-import { FiEdit2 } from "react-icons/fi";
 
 const InventoryManagement = () => {
   const [allExpense, setAllExpense] = useState([]);
@@ -10,7 +8,6 @@ const InventoryManagement = () => {
   const [newQuantity, setNewQuantity] = useState("");
   const [newPrice, setNewPrice] = useState("");
   const [, setNewTotalPrice] = useState("");
-  const [, setIsEditingTodo] = useState(false);
 
   const handleSum = () => {
     let updatedExpenseArr = [...allExpense];
@@ -44,7 +41,7 @@ const InventoryManagement = () => {
       setNewTotalPrice(""); 
 
     } else {
-      alert("Title cannot be empty. Please enter product name.");
+      alert("Product name cannot be empty. Please enter product name.");
     }
       handleSum();
   };
@@ -55,10 +52,6 @@ const InventoryManagement = () => {
     localStorage.setItem("expenselist", JSON.stringify(reducedTodos));
     setAllExpense(reducedTodos);
   };
-
-  const handleCompute = () => {
-
-  }
 
   return (
     <div className="Supply">
@@ -101,9 +94,9 @@ const InventoryManagement = () => {
           >
             Add
           </button>
-          <button className="sum-btn" type="button" onClick={handleSum}>
+          {/* <button className="sum-btn" type="button" onClick={handleSum}>
             Sum
-          </button>
+          </button> */}
         </div>
       </div>
 
