@@ -71,9 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-MEMBERS:
-Castro, Patrick Josuah
-Mendez, Sherwin
-Jornales, Dave Martin
-Caballes, Jeanne 
-Robles, Vincent
+MEMBERS:\
+Castro, Patrick Josuah\
+Mendez, Sherwin\
+Jornales, Dave Martin\
+Caballes, Jeanne \
+Robles, Vincent\
